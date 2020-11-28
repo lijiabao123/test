@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        .nav{
+            background: #333;
+           list-style: none;
+        }
+        .nav-list a{
+            color: #b0b0b0;
+            /* 取消下划线 */
+            text-decoration: none;
+            font-size:12px;
+            padding: 0 10px;
+        }
+        .nav-list{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav clearfix">
+        <li class="nav-list"><a href="#">小米</a></li>
+        <li class="nav-list"><a href="#">小米</a></li>
+        <li class="nav-list"><a href="#">小米</a></li>
+        <li class="nav-list"><a href="#">小米</a></li>
+        <li class="nav-list"><a href="#">小米</a></li>
+        <li class="nav-list"><a href="#">小米</a></li>
+    </ul>
+</body>
+</html>

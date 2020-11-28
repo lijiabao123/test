@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #div1{
+            width:300px;
+            height: 200px;
+            background: aqua;
+            float: left;
+        }
+        #div2{
+            width:300px;
+            height: 200px;
+            background:blueviolet;
+            
+            float: left;
+        }
+        #div0{
+            overflow: hidden;
+        }
+        /* #clean{
+            clear: both;
+        } */
+        /* 伪元素 */
+        #div0::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        h1{
+            height: 100px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div0">
+    <div id="div1"> </div>
+    <div id="div2"> </div>
+    </div>
+    <!-- <div id="clear"> </div> -->
+    <h1></h1>
+</body>
+</html>

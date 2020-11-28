@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义变量
+        // var a = "hello world";
+        // //调试方法
+       //古老 alert(a)
+    //    document.write("<h1>hello</h1>");
+    //    console.log(a)
+    function ranFood(){
+        var ranNum = Math.floor(Math.random()*10);
+        var _foodName = "";
+        switch(ranNum){
+            case 0:_foodName="玛喜达";break;
+            case 1:_foodName="海底捞";break;
+            case 2:_foodName="烤肉";break;
+        }
+        return _foodName;
+    }
+    var g = window.confirm("吃饭吗");
+    if(g){
+        var personNum = window.prompt("吃饭吗");
+        personNum = parseInt(personNum);
+        var personName = [];
+        var resultArr = [];
+        for(var i = 0;i<personName;i++){
+            var _thisName = window.prompt("第"+(i+1)+"个人叫什么");
+            personName.push(_thisName);
+        }
+        for(var j=0;j<personNum;j++){
+            resultArr.push(personName[j]+"吃"+ranFood());
+        }
+        console.log(resultArr);
+    }else{
+        alert("取消")
+    }
+    </script>
+</body>
+</html>

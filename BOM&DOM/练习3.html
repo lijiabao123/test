@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        .box{
+            width: 490px;
+            height: 190px;
+            margin: 100px auto;
+            border:5px solid oldlace;
+            position: relative;
+        }
+        .img-content li{
+            display: none;
+        }
+        .img-content .active{
+            display: block;
+        }
+        .btn-content{
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+        .btn-content .bc-left{
+            float: left;
+        }
+        .btn-content .bc-right{
+            float: right;
+        }
+        .btn-content li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background-color: #f90;
+            border-radius: 50%;
+            color:#fff;
+            text-align: center;
+            line-height: 20px;
+            margin: 0 50px;
+        }
+        .btn-content .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <div class="img-content">
+            <ul >
+                <li class="img-list active"><img src="./"></li>
+                <li><img src="./image/微信图片_20191028233152.jpg"></li>
+                <li><img src="./image/微信图片_20191028233152.jpg"></li>
+                <li><img src="./"></li>
+            </ul>
+        </div>
+        <div class="btn-content">
+            <div class="bc-left">
+                <ul>
+                    <li class="arr-btn">&lt;</li>
+                    <li class="arr-btn">&lg;</li>
+                </ul>
+            </div>
+            <div class="bc-right">
+                <ul>
+                    <li class="num-btn active">1</li>
+                    <li class="num-btn">2</li>
+                    <li class="num-btn">2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var numBtn = document.getElementsByClassName("num-btn");
+        var imgList = document.getElementsByClassName("img-list");
+        var arrBtn=document.getElementsByClassName("arr-btn");
+        var nowIndex=0;
+        for(var i=0;i<numBtn.length;i++){
+            numBtn[i].index=i;
+            numBtn[i].onmouseover=function(){
+            for(var j=0;j<numBtn.length;j++){
+                numBtn[j].classList.remove("active");
+                imgList[j].classList.remove("active");
+            }
+            nowIndex=this.index;
+            this.classList.add("active");
+            imgList[this.index].classList.add("active");
+        }
+        }
+
+        arrBtn[1].onclick=function(){
+            var nextIndex=++nowIndex;
+            for(var j=0;j<numBtn.length;j++){
+                imgList[j].classList.remove("active");
+                numBtn[j].classList.remove("active");
+            }
+
+            numBtn[nextIndex].classList.add("active");
+            imglist[nowIndex+1].classList.add("active");
+        }
+
+        arrBtn[0].onclick=function(){
+            var nextIndex=--nowIndex;
+            for(var j=0;j<numBtn.length;j++){
+                imgList[j].classList.remove("active");
+                numBtn[j].classList.remove("active");
+            }
+
+            numBtn[nextIndex].classList.add("active");
+            imglist[nowIndex+1].classList.add("active");
+        }
+
+    </script>
+</body>
+</html>

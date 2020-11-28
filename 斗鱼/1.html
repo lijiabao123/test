@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        vertical-align: baseline;
+        list-style: none;
+    }
+
+    .header {
+        height: 46px;
+        margin: 10px 0 10px 0;
+        /* position: relative;
+        display: inline;
+        align-items: center;
+        width: 100%;
+        height: 54px;
+        background-color: #fff;
+        overflow: hidden; */
+    }
+
+    .header .header-logo {
+        width: 76px;
+        height: 34px;
+        margin-left: 10px;
+        background: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/logo_864f3ef.png);
+        background-size: 100% 100%;
+
+        display: inline-block;
+        float: left;
+    }
+
+    .header .header-search {
+        width: 170px;
+        height: 28px;
+        background: #f2f2f2;
+        border-radius: 14px;
+        margin-left: 10px;
+        background-image: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/search_0f4cda6.png);
+        background-size: 16px 16px;
+        background-position: 10px 8px;
+        background-repeat: no-repeat;
+        padding-left: 32.5px;
+        font-size: 14px;
+        color: #bbb;
+        line-height: 28px;
+        display: inline-block;
+        float: left;
+    }
+
+    .header .header-open {
+        float: left;
+        background: #ff5b3d;
+        border-radius: 14px;
+        color: #fff;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 74px;
+        height: 28px;
+        text-align: center;
+        font-size: 13px;
+        line-height: 26px;
+    }
+
+    .nav-content .nav-contentName {
+        position: relative;
+        display: inline-block;
+        margin: 0 11px;
+        height: 25px;
+        line-height: 0px;
+        font-size: 14px;
+    }
+
+    .nav-contentName:hover {
+        text-decoration: underline;
+        color: #ff5d3c;
+        font-weight: 77;
+    }
+
+    .nav .nav-deng {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        width: 44px;
+        height: 44px;
+
+        background-image: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/category_0148919.png);
+        background-size: 100% 100%;
+    }
+
+    .title {
+        margin: 0 10px;
+        padding-left: 35px;
+        background: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/icon_play_e54a507.png);
+        background-repeat: no-repeat;
+        font-size: 15px;
+        background-size: 20px 20px;
+    }
+
+    .page-list .roomchen img {
+        height: 110px;
+        width: 179px;
+        /* height: 100%;
+        width: 100%; */
+        background-size: 50% 50%;
+        /* margin: 1px 2px; */
+    }
+
+    .page-list .roomchen .room-hot .hot-tu {
+        display: block;
+        margin-right: 3px;
+        width: 11px;
+        height: 11px;
+        background: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/hotnum_6b05e5d.pngtps://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/bg-shadow_e60f214.png);
+        background-size: 100% 100%;
+    }
+
+    .page-list .roomchen .room-hot {
+        background: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/bg-shadow_e60f214.png);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        box-sizing: border-box;
+        padding-left: 5px;
+        width: 100%;
+        height: 11px;
+        background-size: 100% 100%;
+        border-radius: 4px 4px 0 0;
+    }
+    .room .roomchen {
+        position: absolute;
+       
+        /* left: 0; */
+        z-index: 1;
+        overflow: hidden;
+    }
+    .page-list .roomchen .room-hot .hot-num{
+        color: #fff;
+        display: block;
+        height: 100%;
+        font-size: 10px;
+    }
+
+    .room .roomshow {
+        background: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/list-item-def-thumb_b10bbe8.png);
+        position: relative;
+        background-size: 100% 100%;
+    }
+    .room .roomshow .showAncher{
+        position: absolute;
+
+    }
+     .roomshow .showAncher .showAncherIcon{
+        display: block;
+        width: 11px;
+        height: 12px;
+        margin-right: 3px;
+        background-size: 100% 100%;
+        background: url(https://shark2.douyucdn.cn/front-publish/m-douyu-v3-master/assets/images/iconfont-wo_fdcada2.png);
+    }
+    .room .roomshow .roomchen1{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200908/5524515_2035.png);
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin: 6px 6px 6px 12px;
+    }
+    .room .roomshow .roomchen2{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200909/5524515_2156.png  );
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:  6px 12px 6px 6px;
+    }
+    .room .roomshow .roomchen3{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200911/5524515_2217.png);
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:6px 6px 6px 12px;
+    }
+    .room .roomshow .roomchen4{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200911/1457640_2216.png );
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:  6px 12px 6px 6px;
+    }
+    .room .roomshow .roomchen5{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200911/5472749_2217.png);
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:6px 6px 6px 12px;
+    }
+    .room .roomshow .roomchen6{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200911/2448877_2216.png );
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:  6px 12px 6px 6px;
+    }
+    .room .roomshow .roomchen7{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200911/6210028_2217.png);
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:6px 6px 6px 12px;
+    }
+    .room .roomshow .roomchen8{
+        font-size: 12px;
+        color: #fff;
+        background-image: url(https://rpic.douyucdn.cn/asrpic/200911/6558897_2222.png );
+        height: 106px;
+        width: 182.5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin:  6px 12px 6px 6px;
+    }
+
+</style>
+
+<body>
+    <div class="header">
+        <div class="header-logo"></div>
+        <div class="header-search">搜索</div>
+        <div class="header-open">打开App</div>
+    </div>
+    <div class="nav">
+        <div class="nav-content">
+            <span class="nav-contentName ">推荐</span>
+            <span class="nav-contentName">颜值</span>
+            <span class="nav-contentName">英雄联盟</span>
+            <span class="nav-contentName">王者荣耀</span>
+            <span class="nav-contentName">绝地求生</span>
+        </div>
+        <div class="nav-deng"></div>
+    </div>
+    <div class="title">绝地求生</div>
+    <div class="page-list">
+        <div class="room">
+            <div class="roomshow">
+            <div class="roomchen">
+                
+                    <li  class="roomchen1">
+                        <span>199.0万</span>
+                        
+                       
+                    </li>
+                    <li class="roomchen2">
+                        <span>299.0万</span>
+                          
+                    </li>
+                    <li class="roomchen3">
+                        <span>456.0万</span>
+                        
+                    </li>
+                    <li class="roomchen4">
+                        <span>339.0万</span>
+                       
+                    </li>
+                    <li  class="roomchen5">
+                        <span>400.0万</span>
+                       
+                    </li>
+                    <li class="roomchen6">
+                        <span>300.0万</span>
+                       
+                    </li>
+                    <li class="roomchen7">
+                        <span>198.0万</span>
+                        
+                    </li>
+                    <li class="roomchen8">
+                        <span>200.0万</span>
+                       
+                    </li>
+                
+                <!-- <div class="room-hot">
+                    <i class="hot-tu"></i>
+                    <span class="hot-num">299.0万</span>
+                </div> -->
+            </div>
+            </div>
+        </div>
+        <!-- <div class="roomgou">
+            <img src="https://rpic.douyucdn.cn/asrpic/200908/5524515_2040.png/dy1" alt>
+        </div> -->
+        <!-- <div class="room">
+            <div class="roomshow"></div>
+            <div class="roomchen">
+                <img src=https://rpic.douyucdn.cn/asrpic/200909/5524515_2156.png/dy1 alt>
+
+                <div class="room-hot">
+                    <i class="hot-tu"></i>
+                    <span class="hot-num">299.0万</span>
+                </div>
+            </div>
+        </div> -->
+        <div class="showAncher">
+            <i class="showAncherIcon"></i>
+            <span class="showAncherName"></span>
+        </div>
+    </div>
+</body>
+
+</html>

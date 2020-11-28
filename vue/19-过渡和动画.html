@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 进入动画 */
+        /* 进入之前 */
+        .fade-enter{
+            /* opacity: 0; */
+            transform: translateX(100%);
+        }
+        /* 过渡 */
+        .fade-enter-active{
+            /* transition: opacity 2s ease 1s; */
+            transition: transform 5s ease;
+        }
+        /* 进入之后 */
+        .fade-enter-to{
+            /* opacity: 1; */
+            transform: translateX(0);
+        }
+
+        .fade-leave{
+            opacity: 1;
+        }
+        .fade-leave-active{
+            transition: opacity 5s ease;
+        }
+        .fade-leave-to{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="change">click</button>
+        <translate name="fade">
+            <h2 v-if="isShow">哈哈哈</h2>
+        </translate>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isShow:false
+            },
+            methods:{
+                change(){
+                    this.isShow=! this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

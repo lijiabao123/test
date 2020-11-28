@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        /*
+            常见的this指向
+                1 事件中 谁的事件this就是谁
+                2 setTimeOut setInterval ->window
+                3 对象中 obj.say() 谁.方法 this->谁
+                4 
+        */
+        // var aLi = document.getElementsByTagName('li');
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].onclick = function(){
+        //         setTimeout(function(){
+        //             console.log( this);//window
+        //         },1000)
+        //     }
+        // }
+            // let obj = {
+            //     name:'zs',
+            //     age:18,
+            //     say:function(){
+            //         console.log("balala")
+            //     }
+            // }
+            // obj.say();   //谁.方法 this->谁
+            function fn(){
+                console.log(this); //Window
+            }
+            fn ();//window.fn();
+            /*
+                改变this指向的方式
+                call()
+                apply()
+                bind()    只修改this指向 
+            */
+           let obj = {
+               name:'zs'
+           }
+           function f1(a,b){
+               console.log(this,a,b)
+           }
+           f1.call(obj,1,2);
+           f1.apply(obj,[1,2]);
+           f1.bind(obj,1,2)();
+         /*   var aLi = document.getElementsByTagName('li');
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick = function(){
+                setTimeout(function(){
+                    // console.log( this);//window
+                },1000)
+            }
+        }*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            width: 490px;
+            height: 170px;
+            margin: 0 auto;
+            border: 5px solid white;
+            position: relative;
+        }
+        .img-bar li{
+            float: left;
+        }
+        .img-bar ul{
+            width:2940px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .btn-bar{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .btn-bar .left-btn{
+            float: left;
+        }
+        .btn-bar .right-btn{
+            float: right;
+        }
+        .btn-bar li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f90;
+            margin: 0 5px;
+            text-align: center;
+            line-height: 20px;
+            color: thistle;
+        }
+        .btn-bar .active{
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img-bar">
+            <ul>
+                <li>
+                    <img src="image/image5.png">
+                </li>
+                <li>
+                    <img src="image/image5.jpg">
+                </li>
+                <li>
+                    <img src="image/image5.jpg">
+                </li>
+            </ul>
+        </div>
+        <div class="btn-bar">
+        <div class="left-btn">
+            <ul>
+                <li>&lt;</li>
+                <li>&gt;</li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="right-btn">
+            <ul>
+                <li class="num-btn active">1</li>
+                <li class="num-btn">1</li>
+                <li class="num-btn ">1</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script>
+        var numBtn = document.getElementsByClassName("num-btn");
+        var imgBox = document.getElementsByClassName("img-box");
+        var nowIndex = 0;
+        var nextIndex = 0;
+        var direction = 0;
+        var timer;
+        for(var i=0;i<numBtn.length;i++){
+            numBtn[i].ident=i;
+            numBtn[i].onclick=function(){
+                var _this=this;
+                nextIndex=this.Index;
+                if(nextIndex>nowIndex){
+                    direction = -10;
+                }else if(nextIndex<nowIndex){
+                    direction = 10;
+                }
+
+                for(var j=0;j<numBtn.length;j++){
+                    numBtn[j].classList.remove("active");
+                }
+
+               timer= setInterval(function(){
+                   if(imgBox.ofsetLeft==-490* _this.index){
+                       clearInterval(timer);
+                       nowIndex = nextIndex;
+                   }else{
+                    imgBox.style.left = imgBox.ofsetLeft + direction+"px";
+                   }
+                   
+                },16)
+            }
+        }
+        arrBtn[1].onclick=function(){
+
+        }
+    </script>
+</body>
+</html>

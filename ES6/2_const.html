@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //const !!定义常量 
+        //let有的四点他都有
+        // 1 定义的变量，没有变量提升 
+        // 2.不能重复声明
+        // 3.let块级作用域 
+        // 4.let临时失效区
+    //引用数据类型的常量 指针不能变
+        const a = 10;
+       // a =19; 报错
+        console.log(a);
+        const obj = {
+            name:'zs',
+            age:18
+        }
+        Object.freeze(obj);//冻结
+        obj.name='lisi';
+        console.log(obj);
+    </script>
+</body>
+</html>

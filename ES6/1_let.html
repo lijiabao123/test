@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 变量
+            基本数据类型 string number boolea null undefined （栈内存）
+            (出现undefined 错误1.定义变量没有赋值 2.数组索引越界 3.访问对象没有属性 4.函数没有return默认返回undefined)
+            引用数据类型 array object (堆内存)
+        */ 
+       //变量提升 var定义的变量 当前作用域最上边定义这个变量但不赋值
+    //    console.log(x);
+    //    var x = 20;
+    /* let 
+        1 定义的变量，没有变量提升 
+        2.不能重复声明
+        3.let块级作用域 定义的变量 块级作用域
+        4.let临时失效 暂时性死区 （let定义的变量 在代码块内 到定义let这一行往上 临时失效）
+    */
+    // console.log(m);
+    // let m = "abc";
+    /*var q = 10;
+    var q = 20;
+    console.log(q);*/
+    /*let x = true;
+    if(x){
+        var y = 20;
+        console.log(y);//可以输出Y  块级作用域 每一个花括号都是一块
+    }
+    console.log(y);//不能输出Y*/
+    /*var a = 20;
+    function fn(){
+        concole.log(a);
+        let a = 20;
+    }
+    fn();*/
+    </script>
+</body>
+</html>

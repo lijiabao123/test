@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .slider{
+            height: 500px;
+            position: relative;
+        }
+        .slider-panner{
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider-panner .active{
+            opacity: 1;
+        }
+        .sp-1{
+            background-color: rgb(232,232,232);
+        }
+        .sp-2{
+            background-color: black;
+        }
+        .sp-3{
+            background-color: rgb(232,232,232);
+        }
+        .slider-panner div{
+            width: 2200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+   <div class="slider">
+       <!-- 图片 -->
+       <div class="slider-panner sp-1">
+           <img src="https://img.alicdn.com/tps/i4/https://img.alicdn.com/tps/i4//TB16GtuQWL7gK0jSZFBSutZZpXa.jpg">
+        </div>
+        <div class="slider-panner sp-2 active">
+            <img src="https://img.alicdn.com/simba/img/TB1w9mDl4TpK1RjSZFGSuwHqFXa.jpg">
+        </div>
+        <div class="slider-panner sp-3">
+           
+                <img src="https://img.alicdn.com/simba/img/TB1w9mDl4TpK1RjSZFGSuwHqFXa.jpg">
+            </div>">
+        </div>
+        <div class="list-btn">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+   </div>
+   <script>
+       var slidePanner = document.getElementsByClassName("slider");
+       var nowIndew = 0;
+       setInterval(function(){
+           slidePanner[nowIndew].classList.remove("active");
+           if(++nowIndew<3){
+            slidePanner[nowIndew].classList.add("active");
+           }
+        //    elae{
+
+        //    }
+       })
+   </script>
+</body>
+</html>
